@@ -32,7 +32,7 @@ npm run dev:static
 
 Pretty much same as dev mode, preview will build & preview by default.
 
-```
+```bash
 npm run preview:node
 npm run preview:static
 ```
@@ -45,41 +45,28 @@ npm run preview:static
 npx tauri dev
 ```
 
-### Capacitor dev
+### Capacitor
 
 ```bash
-npx cap dev
-```
-
-## Build tauri
-
-```
-npx tauri build
-```
-
-### capacitor sync
-
-```
 npx cap sync
+npx cap run android # or ios
 ```
 
-## Run production build
+## Tauri
 
-### Run node server
+### MacOS & Windows
 
-```bash
-node build-node/index.js
-```
+tbd
 
-### Run tauri
+### Linux
 
 ```bash
+npx tauri build
 chmod a+x ./src-tauri/target/release/bundle/appimage/sveltekit-universal_0.1.0_amd64.AppImage && ./src-tauri/target/release/bundle/appimage/sveltekit-universal_0.1.0_amd64.AppImage
 ```
 
-### Run capacitor (ios)
+## Run production node server
 
 ```bash
-npx cap sync ios
-npx cap run ios
+node build-node/index.js
 ```
