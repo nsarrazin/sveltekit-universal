@@ -1,8 +1,8 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
-    "beforeBuildCommand": "bun run build:static",
-    "beforeDevCommand": "bun run dev:static",
+    "beforeBuildCommand": "npm run build:static",
+    "beforeDevCommand": "npm run dev:static",
     "devPath": "http://localhost:5173",
     "distDir": "../build-static"
   },
