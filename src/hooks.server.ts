@@ -32,6 +32,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		const headers = new Headers();
 		const origin = event.request.headers.get('Origin');
 
+		console.log('API request from ' + origin);
 		if (isAllowedOrigin(origin)) {
 			if (event.request.method === 'OPTIONS') {
 				return new Response(null, {
