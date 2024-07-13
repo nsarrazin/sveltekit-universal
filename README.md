@@ -42,12 +42,14 @@ npm run preview:static
 ## Mobile & desktop dev
 
 ### Tauri dev
+(requires rust toolchain locally)
 
 ```bash
 npx tauri dev
 ```
 
 ### Capacitor
+(will require you to have either an iOS or an android emulator locally)
 
 ```bash
 npx cap sync
