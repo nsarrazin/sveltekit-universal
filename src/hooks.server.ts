@@ -7,7 +7,7 @@ const ALLOWED_ORIGINS = [
 		? [
 				'http://localhost:4173', // vite preview
 				'http://localhost:5173', // vite dev
-				'http://localhost:3000' // sveltekit prod
+				'http://localhost:3000' // node adapter
 			]
 		: []),
 	'tauri://localhost', // tauri
@@ -24,16 +24,16 @@ function isAllowedOrigin(origin: string | null): origin is string {
 export const handle: Handle = async ({ event, resolve }) => {
 	// Apply CORS header for API routes
 	if (event.url.pathname.startsWith('/api')) {
-		// disable API if a remote API is used
+		// disable API if a remote API is specified with PUBLIC_API_BASE
 		if (PUBLIC_API_BASE) {
 			return new Response('API is disabled', { status: 403 });
 		}
 
-		const headers = new Headers();
 		const origin = event.request.headers.get('Origin');
 
 		console.log('API request from ' + origin);
 		if (isAllowedOrigin(origin)) {
+			// preflight request
 			if (event.request.method === 'OPTIONS') {
 				return new Response(null, {
 					headers: {
@@ -43,11 +43,9 @@ export const handle: Handle = async ({ event, resolve }) => {
 					}
 				});
 			}
-
+			// actual request
 			const response = await resolve(event);
 			response.headers.append('Access-Control-Allow-Origin', origin);
-
-			headers.set('Access-Control-Allow-Origin', origin);
 			return response;
 		}
 	}
