@@ -54,21 +54,15 @@ npx cap sync
 npx cap run android # or ios
 ```
 
-## Tauri
-
-### MacOS & Windows
-
-tbd
-
-### Linux
+## Tauri build
 
 ```bash
 npx tauri build
-chmod a+x ./src-tauri/target/release/bundle/appimage/sveltekit-universal_0.1.0_amd64.AppImage && ./src-tauri/target/release/bundle/appimage/sveltekit-universal_0.1.0_amd64.AppImage
 ```
 
 ## Run production node server
 
 ```bash
+npm run build:node
 node build-node/index.js
 ```
