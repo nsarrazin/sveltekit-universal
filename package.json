@@ -18,7 +18,8 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write .",
-    "tauri" : "tauri"
+    "tauri" : "tauri",
+    "capacitor" : "capacitor"
   },
   "devDependencies": {
     "@capacitor/android": "^6.1.0",
