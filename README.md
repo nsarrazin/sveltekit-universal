@@ -1,6 +1,7 @@
 # Sveltekit Universal
 
-<img width="1321" alt="Screenshot 2024-07-11 at 18 42 19" src="https://github.com/nsarrazin/sveltekit-universal/assets/25119303/c8fc67c5-c4ce-4ab1-bc28-1b8c4577cc8a">
+<img alt="Screenshot 2024-07-11 at 18 42 19" src="https://github.com/user-attachments/assets/0394b5bb-c019-4851-8c90-f51fb977b120">
+
 Run API endpoints, SSR, mobile & desktop from a single codebase.
 
 
